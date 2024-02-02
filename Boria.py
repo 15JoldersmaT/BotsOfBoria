@@ -12,9 +12,21 @@ time = 0
 
 grav = 1
 
-pinkBots = 4 * 6
-yellowBots = 5 * 20
-greenBots = 15 * 7
+# Generate random counts for bots of each color
+pinkBots = random.randint(1, 100) 
+yellowBots = random.randint(1, 100) 
+greenBots = random.randint(1, 100) 
+
+
+g1 = random_number = random.uniform(-1, 1)
+g2 = random_number = random.uniform(-1, 1)
+g3 = random_number = random.uniform(-1, 1)
+g4 = random_number = random.uniform(-1, 1)
+g5 = random_number = random.uniform(-1, 1)
+g6 = random_number = random.uniform(-1, 1)
+g7 = random_number = random.uniform(-1, 1)
+g8 = random_number = random.uniform(-1, 1)
+g9 = random_number = random.uniform(-1, 1)
 
 
 bots = []
@@ -31,7 +43,15 @@ class Bot:
 
     def move(self):
         global bots
-
+        global g1
+        global g2
+        global g3
+        global g4
+        global g5
+        global g6
+        global g7
+        global g8
+        global g9
 
 
         ##SET BOUNDS##
@@ -66,15 +86,28 @@ class Bot:
             g = .3
 
             if i.color == (255,0,0):
-                g = .1
                 if self.color == (255,0,0):
-                    g = .3
-
-            if i.color == (0,255,0):
-                if self.color ==(255,0,0):
-                    g = .2
+                    g = g1
+                elif self.color == (0,255,0):
+                    g = g2
                 else:
-                    g = -.4
+                    g = g3
+
+            elif i.color == (0,255,0):
+                if self.color ==(255,0,0):
+                    g = g4
+                elif self.color == (0,255,0):
+                    g = g5
+                else:
+                    g = g6
+            else:
+                if self.color ==(255,0,0):
+                    g = g7
+                elif self.color == (0,255,0):
+                    g = g8
+                else:
+                    g = g9
+                
                 
             if dist > 0:
                 F = g*.3/dist
@@ -117,6 +150,17 @@ class Bot:
               #      mY = mY - (dist/10000)
         self.x = self.x + mX
         self.y = self.y + mY
+        if self.x < 15:
+            self.x = 15
+
+        if self.x > 1295:
+            self.x = 1295
+
+        if self.y >795:
+            self.y = 795
+
+        if self.y < 5:
+            self.y = 5
             
             
     def show(self,display):
@@ -151,6 +195,38 @@ while True:
 
     keys = pygame.key.get_pressed();
 
+    if keys[pygame.K_r]:
+        for i in bots:
+            bots.remove(i)
+        pinkBots = random.randint(1, 100) 
+        yellowBots = random.randint(1, 100) 
+        greenBots = random.randint(1, 100) 
+
+
+        g1 = random_number = random.uniform(-1, 1)
+        g2 = random_number = random.uniform(-1, 1)
+        g3 = random_number = random.uniform(-1, 1)
+        g4 = random_number = random.uniform(-1, 1)
+        g5 = random_number = random.uniform(-1, 1)
+        g6 = random_number = random.uniform(-1, 1)
+        g7 = random_number = random.uniform(-1, 1)
+        g8 = random_number = random.uniform(-1, 1)
+        g9 = random_number = random.uniform(-1, 1)
+        for i in range(0,pinkBots):
+            bot = Bot(random.randint(1,1300), random.randint(1,800), (255,0,0)) 
+            bots.append(bot)
+
+        for i in range(0,yellowBots):
+            bot = Bot(random.randint(1,1300), random.randint(1,800), (215, 215, 18)) 
+            bots.append(bot)
+
+        for i in range(0,greenBots):
+            bot = Bot(random.randint(1,1300), random.randint(1,800), (0,255,0)) 
+            bots.append(bot)
+
+            
+        
+        
     for i in bots:
         i.show(display)
         i.move()

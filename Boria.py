@@ -13,10 +13,10 @@ time = 0
 grav = 1
 
 # Generate random counts for bots of each color
-pinkBots = random.randint(1, 30) 
-yellowBots = random.randint(1, 30) 
-greenBots = random.randint(1, 30) 
-blueBots = random.randint(1, 30) 
+pinkBots = random.randint(1, 45) 
+yellowBots = random.randint(1, 45) 
+greenBots = random.randint(1, 45) 
+blueBots = random.randint(1, 45) 
 
 
 g1 = random_number = random.uniform(-1, 1)
@@ -229,10 +229,10 @@ while True:
     if keys[pygame.K_r]:
         for i in bots:
             bots.remove(i)
-        pinkBots = random.randint(1, 30) 
-        yellowBots = random.randint(1, 30) 
-        greenBots = random.randint(1, 30) 
-        blueBots = random.randint(1, 30)
+        pinkBots = random.randint(1, 45) 
+        yellowBots = random.randint(1, 45) 
+        greenBots = random.randint(1, 45) 
+        blueBots = random.randint(1, 45)
 
         g1 = random_number = random.uniform(-1, 1)
         g2 = random_number = random.uniform(-1, 1)

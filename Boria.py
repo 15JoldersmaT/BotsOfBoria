@@ -283,8 +283,7 @@ while True:
     keys = pygame.key.get_pressed();
 
     if keys[pygame.K_r]:
-        for i in bots:
-            bots.remove(i)
+        bots = []
   
         cBots = random.randint(1, 5) 
 
@@ -335,19 +334,19 @@ while True:
         g35 = random_number = random.uniform(-1, 1)
         g36 = random_number = random.uniform(-1, 1)
         if cBots == 1:
-            for _ in range(120):
+            for _ in range(220):
                 bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)]))
                 bots.append(bot)
         elif cBots == 2:
-            for _ in range(120):
+            for _ in range(220):
                 bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(255, 0, 0), (0, 255, 0), (255, 165, 0), (0, 255, 255)]))
                 bots.append(bot)
         elif cBots == 3:
-            for _ in range(120):
+            for _ in range(220):
                 bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(0, 255, 0), (255, 165, 0), (0, 255, 255)]))
                 bots.append(bot)
         else:
-            for _ in range(120):
+            for _ in range(220):
                 bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(0, 255, 0), (0, 255, 255)]))
                 bots.append(bot)
             

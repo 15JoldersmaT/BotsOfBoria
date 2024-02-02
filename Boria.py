@@ -349,7 +349,7 @@ while True:
         else:
             for _ in range(120):
                 bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(0, 255, 0), (0, 255, 255)]))
-                bots.append(bot
+                bots.append(bot)
             
             
 

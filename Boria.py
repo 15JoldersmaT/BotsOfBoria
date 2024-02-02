@@ -342,10 +342,15 @@ while True:
             for _ in range(120):
                 bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(255, 0, 0), (0, 255, 0), (255, 165, 0), (0, 255, 255)]))
                 bots.append(bot)
-        else:
+        elif cBots == 3:
             for _ in range(120):
                 bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(0, 255, 0), (255, 165, 0), (0, 255, 255)]))
                 bots.append(bot)
+        else:
+            for _ in range(120):
+                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(0, 255, 0), (0, 255, 255)]))
+                bots.append(bot
+            
             
 
             

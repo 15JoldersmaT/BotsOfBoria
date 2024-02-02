@@ -13,9 +13,10 @@ time = 0
 grav = 1
 
 # Generate random counts for bots of each color
-pinkBots = random.randint(1, 100) 
-yellowBots = random.randint(1, 100) 
-greenBots = random.randint(1, 100) 
+pinkBots = random.randint(1, 30) 
+yellowBots = random.randint(1, 30) 
+greenBots = random.randint(1, 30) 
+blueBots = random.randint(1, 30) 
 
 
 g1 = random_number = random.uniform(-1, 1)
@@ -28,6 +29,13 @@ g7 = random_number = random.uniform(-1, 1)
 g8 = random_number = random.uniform(-1, 1)
 g9 = random_number = random.uniform(-1, 1)
 
+g10 = random_number = random.uniform(-1, 1)
+g11 = random_number = random.uniform(-1, 1)
+g12 = random_number = random.uniform(-1, 1)
+g13 = random_number = random.uniform(-1, 1)
+g14 = random_number = random.uniform(-1, 1)
+g15 = random_number = random.uniform(-1, 1)
+g16 = random_number = random.uniform(-1, 1)
 
 bots = []
 
@@ -52,7 +60,13 @@ class Bot:
         global g7
         global g8
         global g9
-
+        global g10
+        global g11
+        global g12
+        global g13
+        global g14
+        global g15
+        global g16
 
         ##SET BOUNDS##
 
@@ -90,23 +104,38 @@ class Bot:
                     g = g1
                 elif self.color == (0,255,0):
                     g = g2
-                else:
+                elif self.color == (0,0,255):
                     g = g3
+                else:
+                    g = g4
 
             elif i.color == (0,255,0):
                 if self.color ==(255,0,0):
-                    g = g4
-                elif self.color == (0,255,0):
                     g = g5
-                else:
+                elif self.color == (0,255,0):
                     g = g6
+                elif self.color == (0,0,255):
+                    g = g7
+                else:
+                    g = g8
+            elif i.color == (0,0,255):
+                if self.color ==(255,0,0):
+                    g = g9
+                elif self.color == (0,255,0):
+                    g = g10
+                elif self.color == (0,0,255):
+                    g = g11
+                else:
+                    g = g12
             else:
                 if self.color ==(255,0,0):
-                    g = g7
+                    g = g13
                 elif self.color == (0,255,0):
-                    g = g8
+                    g = g14
+                elif self.color == (0,0,255):
+                    g = g15
                 else:
-                    g = g9
+                    g = g16
                 
                 
             if dist > 0:
@@ -180,7 +209,9 @@ for i in range(0,greenBots):
     bot = Bot(random.randint(1,1300), random.randint(1,800), (0,255,0)) 
     bots.append(bot)
 
-
+for i in range(0,blueBots):
+    bot = Bot(random.randint(1,1300), random.randint(1,800), (0,0,255)) 
+    bots.append(bot)
     
 while True:
 
@@ -198,10 +229,10 @@ while True:
     if keys[pygame.K_r]:
         for i in bots:
             bots.remove(i)
-        pinkBots = random.randint(1, 100) 
-        yellowBots = random.randint(1, 100) 
-        greenBots = random.randint(1, 100) 
-
+        pinkBots = random.randint(1, 30) 
+        yellowBots = random.randint(1, 30) 
+        greenBots = random.randint(1, 30) 
+        blueBots = random.randint(1, 30)
 
         g1 = random_number = random.uniform(-1, 1)
         g2 = random_number = random.uniform(-1, 1)
@@ -212,6 +243,13 @@ while True:
         g7 = random_number = random.uniform(-1, 1)
         g8 = random_number = random.uniform(-1, 1)
         g9 = random_number = random.uniform(-1, 1)
+        g10= random_number = random.uniform(-1, 1)
+        g11 = random_number = random.uniform(-1, 1)
+        g12 = random_number = random.uniform(-1, 1)
+        g13 = random_number = random.uniform(-1, 1)
+        g14 = random_number = random.uniform(-1, 1)
+        g15 = random_number = random.uniform(-1, 1)
+        g16 = random_number = random.uniform(-1, 1)
         for i in range(0,pinkBots):
             bot = Bot(random.randint(1,1300), random.randint(1,800), (255,0,0)) 
             bots.append(bot)
@@ -222,6 +260,10 @@ while True:
 
         for i in range(0,greenBots):
             bot = Bot(random.randint(1,1300), random.randint(1,800), (0,255,0)) 
+            bots.append(bot)
+
+        for i in range(0,blueBots):
+            bot = Bot(random.randint(1,1300), random.randint(1,800), (0,0,255)) 
             bots.append(bot)
 
             

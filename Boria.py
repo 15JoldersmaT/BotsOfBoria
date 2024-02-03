@@ -86,11 +86,12 @@ c6 =random.randint(0,3)
 bots = []
 
 class Bot:
-    def __init__(self, x, y, color, contagious ):
+    def __init__(self, x, y, color, contagious, conColor):
         self.x = x
         self.y = y
         self.color = color
         self.contagious = contagious
+        self.conColor = color
         
  
 
@@ -168,7 +169,8 @@ class Bot:
             dist = (dX*dX)+(dY*dY)
             dist = math.sqrt(dist)
             if dist <= .5 and self.contagious == True:
-                i.color = self.color
+                i.color = self.conColor
+                print ('change')
                 i.contagious = self.contagious 
             g = .3
 
@@ -303,7 +305,7 @@ class Bot:
 
 
 for _ in range(pinkBots + yellowBots + greenBots + blueBots + orangeBots + cyanBots + redBots):
-    bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)]),False)
+    bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)]),False, (255,0,0))
     if bot.color == (255, 0, 0) and c1 == True:
         bot.contagious = True
 
@@ -397,33 +399,62 @@ while True:
         c6 =random.randint(0,2)
         c7 =random.randint(0,2)
 
-        
-      
-        for _ in range(320):
-            if cBots == 1 :
-                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)]),False)
-            elif cBots == 2:
-                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0)]),False)
-            elif cBots == 3:
-                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18)]),False)
-            elif cBots == 4:
-                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0)]),False)
-            elif cBots == 5:
-                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0)]),False)
+        c11 = (255,0,0)
+        c12 = (255,0,0)
+        c13 = (255,0,0)
+        c14 = (255,0,0)
+        c15 = (255,0,0)
+        c16 = (255,0,0)
+        c17 = (255,0,0)
+        if c1 == 1:
+            c11 = random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)])
 
+        if c2 == 1:
+            c12 = random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)])
+        if c3 == 1:
+            c13 = random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)])
+        if c4 == 1:
+            c14 = random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)])
+        if c5 == 1:
+            c15 = random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)])
+        if c6 == 1:
+            c16 = random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)])
+        if c7 == 1:
+            c17 = random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)])
+                                 
+      
+        for _ in range(220):
+            if cBots == 1 :
+                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)]),False,(0, 255, 255))
+            elif cBots == 2:
+                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0)]),False,(0, 255, 255))
+            elif cBots == 3:
+                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18)]),False,(0, 255, 255))
+            elif cBots == 4:
+                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0)]),False,(0, 255, 255))
+            elif cBots == 5:
+                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0)]),False,(0, 255, 255))
+            
             if bot.color == (255,0,0) and c1 == 1:
+                bot.conColor = c11
                 bot.contagious == True
             elif bot.color == (215,215,18) and c2 == 1:
+                bot.conColor = c12
                 bot.contagious == True
             elif bot.color == (0, 255, 0) and c3 == 1:
+                bot.conColor = c13
                 bot.contagious == True
             elif bot.color == (0, 0, 255) and c4 == 1:
+                bot.conColor = c14
                 bot.contagious == True
             elif bot.color == (255, 165, 0) and c5 == 1:
+                bot.conColor = c15
                 bot.contagious == True
             elif bot.color == (0, 255, 255) and c6 == 1:
+                bot.conColor = c16
                 bot.contagious == True
             elif bot.color == (200, 0, 0) and c7 == 1:
+                bot.conColor = c17
                 bot.contagious == True
                 
             bots.append(bot)

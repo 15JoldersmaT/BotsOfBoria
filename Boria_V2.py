@@ -410,13 +410,13 @@ while True:
         g36 = random_number = random.uniform(-1, 1)
 
 
-        c1 =random.randint(0,1)
-        c2 =random.randint(0,1)
-        c3 =random.randint(0,1)
-        c4 =random.randint(0,1)
-        c5 =random.randint(0,1)
-        c6 =random.randint(0,1)
-        c7 =random.randint(0,1)
+        c1 =random.randint(0,2)
+        c2 =random.randint(0,2)
+        c3 =random.randint(0,2)
+        c4 =random.randint(0,2)
+        c5 =random.randint(0,2)
+        c6 =random.randint(0,2)
+        c7 =random.randint(0,2)
 
         
 

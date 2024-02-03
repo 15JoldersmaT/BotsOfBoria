@@ -141,16 +141,16 @@ class Bot:
        
         ##SET BOUNDS##
 
-        if self.x < 15:
+        if self.x < 16:
             self.x = self.x + 20
 
-        if self.x > 1295:
+        if self.x > 1294:
             self.x = self.x - 20
 
-        if self.y >795:
+        if self.y >794:
             self.y = self.y - 20
 
-        if self.y < 5:
+        if self.y < 6:
             self.y = self.y + 20
 
         
@@ -271,16 +271,16 @@ class Bot:
                 mY += (F*dY)
 
 
-        if self.x < 5:
+        if self.x <= 6:
             mX = mX * - 1
 
-        if self.x > 1295:
+        if self.x >= 1294:
             mX = mX * - 1
 
-        if self.y >795:
+        if self.y >=794:
             mY = mY * -1
 
-        if self.y < 5:
+        if self.y <= 6:
             mY = mY * -1
                     
         self.x = self.x + mX
@@ -323,7 +323,8 @@ for _ in range(pinkBots + yellowBots + greenBots + blueBots + orangeBots + cyanB
     if bot.color == (0, 255, 255) and c6 == True:
         bot.contagious = True
     bots.append(bot)
-    
+
+comp = False 
 while True:
 
         
@@ -336,6 +337,12 @@ while True:
             sys.exit()
 
     keys = pygame.key.get_pressed();
+
+
+    if keys[pygame.K_0]:
+        comp = True
+    if keys[pygame.K_9]:
+        comp = False
 
     if keys[pygame.K_r]:
         bots = []
@@ -422,7 +429,7 @@ while True:
             c17 = random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)])
                                  
       
-        for _ in range(175):
+        for _ in range(195):
             if cBots == 1 :
                 bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)]),False,(0, 255, 255))
             elif cBots == 2:

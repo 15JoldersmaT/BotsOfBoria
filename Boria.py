@@ -19,6 +19,7 @@ greenBots = random.randint(1, 25)
 blueBots = random.randint(1, 25) 
 orangeBots = random.randint(1, 25)  # Add orange bots
 cyanBots = random.randint(1, 25)    # Add cyan bots
+redBots = random.randint(1, 25)
 
 g1 = random_number = random.uniform(-1, 1)
 g2 = random_number = random.uniform(-1, 1)
@@ -66,15 +67,30 @@ g33 = random_number = random.uniform(-1, 1)
 g34 = random_number = random.uniform(-1, 1)
 g35 = random_number = random.uniform(-1, 1)
 g36 = random_number = random.uniform(-1, 1)
+g37 = random_number = random.uniform(-1, 1)
+g38 = random_number = random.uniform(-1, 1)
+g39 = random_number = random.uniform(-1, 1)
+g40 = random_number = random.uniform(-1, 1)
+g41 = random_number = random.uniform(-1, 1)
+g42 = random_number = random.uniform(-1, 1)
 
+
+#Contagion logic
+c1 =random.randint(0,2)
+c2 =random.randint(0,2)
+c3 =random.randint(0,2)
+c4 =random.randint(0,3)
+c5 =random.randint(0,3)
+c6 =random.randint(0,3)
 
 bots = []
 
 class Bot:
-    def __init__(self, x, y, color):
+    def __init__(self, x, y, color, contagious ):
         self.x = x
         self.y = y
         self.color = color
+        self.contagious = contagious
         
  
 
@@ -116,6 +132,12 @@ class Bot:
         global g34
         global g35
         global g36
+        global g37
+        global g38
+        global g39
+        global g41
+        global g42
+       
         ##SET BOUNDS##
 
         if self.x < 15:
@@ -145,6 +167,9 @@ class Bot:
 
             dist = (dX*dX)+(dY*dY)
             dist = math.sqrt(dist)
+            if dist <= .5 and self.contagious == True:
+                i.color = self.color
+                i.contagious = self.contagious 
             g = .3
 
             if i.color == (255,0,0):
@@ -158,74 +183,86 @@ class Bot:
                     g = g4
                 elif self.color == (0,255,255):  # Cyan color
                     g = g5
-                else:
+                elif self.color == (247, 114, 187):  # Cyan color
                     g = g6
+                else:
+                    g = g7
             elif i.color == (0,255,0):
                 if self.color ==(255,0,0):
-                    g = g7
-                elif self.color == (0,255,0):
                     g = g8
-                elif self.color == (0,0,255):
+                elif self.color == (0,255,0):
                     g = g9
-                elif self.color == (255,165,0):
+                elif self.color == (0,0,255):
                     g = g10
-                elif self.color == (0,255,255):
+                elif self.color == (255,165,0):
                     g = g11
-                else:
+                elif self.color == (0,255,255):
                     g = g12
+                elif self.color == (247, 114, 187):  # Cyan color
+                    g = g13
+                else:
+                    g = g14
             elif i.color == (0,0,255):
                 if self.color ==(255,0,0):
-                    g = g13
+                    g = g15
                 elif self.color == (0,255,0):
-                     g = g14
-                elif self.color == (0,0,255):
-                     g = g15
-                elif self.color == (255,165,0):
                      g = g16
-                elif self.color == (0,255,255):
+                elif self.color == (0,0,255):
                      g = g17
+                elif self.color == (255,165,0):
+                     g = g18
+                elif self.color == (0,255,255):
+                     g = g19
+                elif self.color == (247, 114, 187):  # Cyan color
+                    g = g20
                 else:
-                    g = g18
+                    g = g21
 
             elif i.color == (255,165,0):
                 if self.color ==(255,0,0):
-                    g = g19
-                elif self.color == (0,255,0):
-                    g = g20
-                elif self.color == (0,0,255):
-                    g = g21
-                elif self.color == (255,165,0):
                     g = g22
-                elif self.color == (0,255,255):
+                elif self.color == (0,255,0):
                     g = g23
-                else:
+                elif self.color == (0,0,255):
                     g = g24
+                elif self.color == (255,165,0):
+                    g = g25
+                elif self.color == (0,255,255):
+                    g = g26
+                elif self.color == (247, 114, 187):  # Cyan color
+                    g = g27
+                else:
+                    g = g28
             elif i.color == (0,255,255):
                 if self.color ==(255,0,0):
-                    g = g25
-                elif self.color == (0,255,0):
-                    g = g26
-                elif self.color == (0,0,255):
-                    g = g27
-                elif self.color == (255,165,0):
-                    g = g28
-                elif self.color == (0,255,255):
                     g = g29
+                elif self.color == (0,255,0):
+                    g = g30
+                elif self.color == (0,0,255):
+                    g = g31
+                elif self.color == (255,165,0):
+                    g = g32
+                elif self.color == (0,255,255):
+                    g = g33
+                elif self.color == (247, 114, 187):  # Cyan color
+                    g = g34
                 else:
-                    g=30
+                    g=g35
             else:
                 if self.color ==(255,0,0):
-                    g = g31
-                elif self.color == (0,255,0):
-                    g = g32
-                elif self.color == (0,0,255):
-                    g = g33
-                elif self.color == (255,165,0):
-                    g = g34
-                elif self.color == (0,255,255):
-                    g = g35
-                else:
                     g = g36
+                elif self.color == (0,255,0):
+                    g = g37
+                elif self.color == (0,0,255):
+                    g = g38
+                elif self.color == (255,165,0):
+                    g = g39
+                elif self.color == (0,255,255):
+                    g = g40
+                elif self.color == (247, 114, 187):  # Cyan color
+                    g = g41
+                else:
+                    g = g42
                 
             if dist > 0:
                 F = g*.3/dist
@@ -265,8 +302,25 @@ class Bot:
 
 
 
-for _ in range(pinkBots + yellowBots + greenBots + blueBots + orangeBots + cyanBots):
-    bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)]))
+for _ in range(pinkBots + yellowBots + greenBots + blueBots + orangeBots + cyanBots + redBots):
+    bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)]),False)
+    if bot.color == (255, 0, 0) and c1 == True:
+        bot.contagious = True
+
+    if bot.color == (215, 215, 18) and c2 == True:
+        bot.contagious = True
+
+    if bot.color == (0, 255, 0) and c3 == True:
+        bot.contagious = True
+
+    if bot.color == (0, 0, 255) and c4 == True:
+        bot.contagious = True
+
+    if bot.color == (255, 165, 0) and c5 == True:
+        bot.contagious = True
+
+    if bot.color == (0, 255, 255) and c6 == True:
+        bot.contagious = True
     bots.append(bot)
     
 while True:
@@ -333,22 +387,46 @@ while True:
         g34 = random_number = random.uniform(-1, 1)
         g35 = random_number = random.uniform(-1, 1)
         g36 = random_number = random.uniform(-1, 1)
-        if cBots == 1:
-            for _ in range(220):
-                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)]))
-                bots.append(bot)
-        elif cBots == 2:
-            for _ in range(220):
-                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(255, 0, 0), (0, 255, 0), (255, 165, 0), (0, 255, 255)]))
-                bots.append(bot)
-        elif cBots == 3:
-            for _ in range(220):
-                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(0, 255, 0), (255, 165, 0), (0, 255, 255)]))
-                bots.append(bot)
-        else:
-            for _ in range(220):
-                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(0, 255, 0), (0, 255, 255)]))
-                bots.append(bot)
+
+
+        c1 =random.randint(0,2)
+        c2 =random.randint(0,2)
+        c3 =random.randint(0,2)
+        c4 =random.randint(0,2)
+        c5 =random.randint(0,2)
+        c6 =random.randint(0,2)
+        c7 =random.randint(0,2)
+
+        
+      
+        for _ in range(320):
+            if cBots == 1 :
+                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0), (0, 255, 255)]),False)
+            elif cBots == 2:
+                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0)]),False)
+            elif cBots == 3:
+                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18)]),False)
+            elif cBots == 4:
+                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0)]),False)
+            elif cBots == 5:
+                bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (255, 165, 0)]),False)
+
+            if bot.color == (255,0,0) and c1 == 1:
+                bot.contagious == True
+            elif bot.color == (215,215,18) and c2 == 1:
+                bot.contagious == True
+            elif bot.color == (0, 255, 0) and c3 == 1:
+                bot.contagious == True
+            elif bot.color == (0, 0, 255) and c4 == 1:
+                bot.contagious == True
+            elif bot.color == (255, 165, 0) and c5 == 1:
+                bot.contagious == True
+            elif bot.color == (0, 255, 255) and c6 == 1:
+                bot.contagious == True
+            elif bot.color == (200, 0, 0) and c7 == 1:
+                bot.contagious == True
+                
+            bots.append(bot)
             
             
 

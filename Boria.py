@@ -266,7 +266,7 @@ class Bot:
                     g = g42
                 
             if dist > 0:
-                F = g*.3/dist
+                F = g/dist
                 mX += (F*dX)
                 mY += (F*dY)
 

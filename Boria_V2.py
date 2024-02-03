@@ -84,9 +84,9 @@ c5 =random.randint(0,3)
 c6 =random.randint(0,3)
 
 
-d1 =random.randint(0,2)
-d2 =random.randint(0,2)
-d3 =random.randint(0,2)
+d1 =random.randint(0,3)
+d2 =random.randint(0,3)
+d3 =random.randint(0,3)
 d4 =random.randint(0,3)
 d5 =random.randint(0,3)
 d6 =random.randint(0,3)
@@ -431,13 +431,13 @@ while True:
 
 
         #how far from is it contagious?
-        d1 =random.uniform(0, 3)
-        d2 =random.uniform(0, 3)
-        d3 =random.uniform(0, 3)
-        d4 =random.uniform(0, 3)
-        d5 =random.uniform(0, 3)
-        d6 =random.uniform(0, 3)
-        d7 =random.uniform(0, 3)
+        d1 =random.uniform(0, 2)
+        d2 =random.uniform(0, 2)
+        d3 =random.uniform(0, 2)
+        d4 =random.uniform(0, 2)
+        d5 =random.uniform(0, 2)
+        d6 =random.uniform(0, 2)
+        d7 =random.uniform(0, 2)
 
         #Used to determine what color this one changes others to
         c11 = (255,0,0)
@@ -464,7 +464,7 @@ while True:
             c17 = random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)])
                                  
       
-        for _ in range(195):
+        for _ in range(215):
             if cBots == 1 :
                 bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)]),False,(0, 255, 255), 10,1)
             elif cBots == 2:

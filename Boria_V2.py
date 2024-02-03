@@ -431,13 +431,13 @@ while True:
 
 
         #how far from is it contagious?
-        d1 =random.uniform(0, 5)
-        d2 =random.uniform(0, 5)
-        d3 =random.uniform(0, 5)
-        d4 =random.uniform(0, 5)
-        d5 =random.uniform(0, 5)
-        d6 =random.uniform(0, 5)
-        d7 =random.uniform(0, 5)
+        d1 =random.uniform(0, 3)
+        d2 =random.uniform(0, 3)
+        d3 =random.uniform(0, 3)
+        d4 =random.uniform(0, 3)
+        d5 =random.uniform(0, 3)
+        d6 =random.uniform(0, 3)
+        d7 =random.uniform(0, 3)
 
         #Used to determine what color this one changes others to
         c11 = (255,0,0)

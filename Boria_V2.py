@@ -421,23 +421,23 @@ while True:
         
 
         #how contagious? 
-        cc1 =random.randint(0,15)
-        cc2 =random.randint(0,15)
-        cc3 =random.randint(0,15)
-        cc4 =random.randint(0,15)
-        cc5 =random.randint(0,15)
-        cc6 =random.randint(0,15)
-        cc7 =random.randint(0,15)
+        cc1 =random.randint(0,100)
+        cc2 =random.randint(0,100)
+        cc3 =random.randint(0,100)
+        cc4 =random.randint(0,100)
+        cc5 =random.randint(0,100)
+        cc6 =random.randint(0,100)
+        cc7 =random.randint(0,100)
 
 
         #how far from is it contagious?
-        d1 =random.uniform(0, 2)
-        d2 =random.uniform(0, 2)
-        d3 =random.uniform(0, 2)
-        d4 =random.uniform(0, 2)
-        d5 =random.uniform(0, 2)
-        d6 =random.uniform(0, 2)
-        d7 =random.uniform(0, 2)
+        d1 =random.uniform(0, 5)
+        d2 =random.uniform(0, 5)
+        d3 =random.uniform(0, 5)
+        d4 =random.uniform(0, 5)
+        d5 =random.uniform(0, 5)
+        d6 =random.uniform(0, 5)
+        d7 =random.uniform(0, 5)
 
         #Used to determine what color this one changes others to
         c11 = (255,0,0)

@@ -180,10 +180,11 @@ class Bot:
             dist = math.sqrt(dist)
             if dist <= self.conDist and self.contagious == True and self.color != i.color:
                 sChance = random.randint(0,self.conChance)
-                i.color = self.conColor
-                i.contagious = self.contagious
-                i.conColor = self.conColor
-                i.conDist = self.conDist
+                if sChance == 0:
+                    i.color = self.conColor
+                    i.contagious = self.contagious
+                    i.conColor = self.conColor
+                    i.conDist = self.conDist
             g = .3
 
             if i.color == (255,0,0):
@@ -464,7 +465,7 @@ while True:
             c17 = random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)])
                                  
       
-        for _ in range(225):
+        for _ in range(235):
             if cBots == 1 or comp == True :
                 bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)]),False,(0, 255, 255), 10,1)
             elif cBots == 2:

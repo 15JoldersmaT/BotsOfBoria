@@ -10,7 +10,7 @@ clock = pygame.time.Clock()
 
 time = 0
 
-grav = 1
+Grav =  random.uniform(0, 2)
 
 # Generate random counts for bots of each color
 pinkBots = random.randint(1, 25) 
@@ -91,6 +91,15 @@ d4 =random.randint(0,3)
 d5 =random.randint(0,3)
 d6 =random.randint(0,3)
 
+#Used to determine what color this one changes others to
+c11 = (255,0,0)
+c12 = (255,0,0)
+c13 = (255,0,0)
+c14 = (255,0,0)
+c15 = (255,0,0)
+c16 = (255,0,0)
+c17 = (255,0,0)
+        
 bots = []
 
 class Bot:
@@ -180,10 +189,52 @@ class Bot:
             dist = math.sqrt(dist)
             if dist <= self.conDist and self.contagious == True and self.color != i.color:
                 sChance = random.randint(0,self.conChance)
-                if sChance == 0:
+                if sChance == 1:
                     i.color = self.conColor
-                    i.contagious = self.contagious
+                    i.contagious = False
                     i.conColor = self.conColor
+                    if i.color == (255,0,0):
+                        i.conColor = c11
+                        i.conDist = d1
+                        i.conChance = cc1
+                        if c1 == True:
+                            i.contagious = True
+                    elif i.color == (215,215,18):
+                        i.conColor = c12
+                        i.conDist = d2
+                        i.conChance = cc2
+                        if c2 == True:
+                            i.contagious = True
+                    elif i.color == (0, 255, 0):
+                        i.conColor = c13
+                        i.conDist = d3
+                        i.conChance = cc3
+                        if c3 == True:
+                            i.contagious = True
+                    elif i.color == (0, 0, 255):
+                        i.conColor = c14
+                        i.conDist = d4
+                        i.conChance = cc4
+                        if c4 == True:
+                            i.contagious = True
+                    elif i.color == (200, 55, 187):
+                        i.conColor = c15
+                        i.conDist = d5
+                        i.conChance = cc5
+                        if c5 == True:
+                            i.contagious = True
+                    elif i.color == (0, 255, 255):
+                        i.conColor = c16
+                        i.conDist = d6
+                        i.conChance = cc6
+                        if c6 == True:
+                            i.contagious = True
+                    elif i.color == (200,0,0):
+                        i.conColor = c17
+                        i.conDist = d7
+                        i.conChance = cc7
+                        if c7 == True:
+                            i.contagious = True
                     i.conDist = self.conDist
             g = .3
 
@@ -280,7 +331,7 @@ class Bot:
                     g = g42
                 
             if dist > 0:
-                F = g/dist
+                F = g/(dist*Grav)
                 mX += (F*dX)
                 mY += (F*dY)
 
@@ -360,7 +411,8 @@ while True:
 
     if keys[pygame.K_r]:
         bots = []
-  
+        Grav =  random.uniform(.5, 2)
+
         cBots = random.randint(1, 5) 
 
         g1 = random_number = random.uniform(-1, 1)
@@ -440,14 +492,7 @@ while True:
         d6 =random.uniform(0, 5)
         d7 =random.uniform(0, 5)
 
-        #Used to determine what color this one changes others to
-        c11 = (255,0,0)
-        c12 = (255,0,0)
-        c13 = (255,0,0)
-        c14 = (255,0,0)
-        c15 = (255,0,0)
-        c16 = (255,0,0)
-        c17 = (255,0,0)
+     
         if c1 == 1:
             c11 = random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)])
             

@@ -91,6 +91,16 @@ d4 =random.randint(0,3)
 d5 =random.randint(0,3)
 d6 =random.randint(0,3)
 
+
+
+#how contagious? 
+cc1 =random.randint(0,10)
+cc2 =random.randint(0,10)
+cc3 =random.randint(0,10)
+cc4 =random.randint(0,10)
+cc5 =random.randint(0,10)
+cc6 =random.randint(0,10)
+cc7 =random.randint(0,10)
 #Used to determine what color this one changes others to
 c11 = (255,0,0)
 c12 = (255,0,0)
@@ -474,13 +484,13 @@ while True:
         
 
         #how contagious? 
-        cc1 =random.randint(0,100)
-        cc2 =random.randint(0,100)
-        cc3 =random.randint(0,100)
-        cc4 =random.randint(0,100)
-        cc5 =random.randint(0,100)
-        cc6 =random.randint(0,100)
-        cc7 =random.randint(0,100)
+        cc1 =random.randint(0,10)
+        cc2 =random.randint(0,10)
+        cc3 =random.randint(0,10)
+        cc4 =random.randint(0,10)
+        cc5 =random.randint(0,10)
+        cc6 =random.randint(0,10)
+        cc7 =random.randint(0,10)
 
 
         #how far from is it contagious?

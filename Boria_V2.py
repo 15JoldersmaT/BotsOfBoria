@@ -12,6 +12,8 @@ time = 0
 
 Grav =  random.uniform(0, 2)
 
+#fewer bots
+lowMode = False
 # Generate random counts for bots of each color
 pinkBots = random.randint(1, 25) 
 yellowBots = random.randint(1, 25) 
@@ -419,6 +421,12 @@ while True:
     if keys[pygame.K_9]:
         comp = False
 
+    if keys[pygame.K_l]:
+        if lowMode == False:
+            lowMode = True
+        else:
+            lowMode = False
+        
     if keys[pygame.K_r]:
         bots = []
         Grav =  random.uniform(.7, 1.5)
@@ -519,8 +527,11 @@ while True:
         if c7 == 1:
             c17 = random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)])
                                  
-      
-        for _ in range(235):
+
+        spawnNum = 235
+        if lowMode == True:
+            spawnNum = 140
+        for _ in range(spawnNum):
             if cBots == 1 or comp == True :
                 bot = Bot(random.randint(1, 1300), random.randint(1, 800), random.choice([(247, 114, 187),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)]),False,(0, 255, 255), 10,1)
             elif cBots == 2:

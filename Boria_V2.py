@@ -411,7 +411,7 @@ while True:
 
     if keys[pygame.K_r]:
         bots = []
-        Grav =  random.uniform(.5, 2)
+        Grav =  random.uniform(.7, 1.5)
 
         cBots = random.randint(1, 5) 
 

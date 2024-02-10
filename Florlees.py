@@ -2,6 +2,10 @@ import pygame
 import sys
 import random
 import math
+import cProfile
+import pstats
+import multiprocessing
+
 
 display = pygame.display.set_mode((1300,800) ,flags=pygame.SCALED, vsync=0)
 pygame.display.set_caption('Bots of Boria')
@@ -413,7 +417,7 @@ class Bot:
                 else:
                     g = g42
                 
-            if dist > 0 and self.tile == i.tile or dist > 0 and dist <= 30:
+            if dist > 0 and self.tile == i.tile or dist > 0 and dist <= random.randint(100,400):
                 F = g/(dist*Grav)
                 mX += (F*dX)
                 mY += (F*dY)
@@ -492,7 +496,11 @@ for _ in range(pinkBots + yellowBots + greenBots + blueBots + orangeBots + cyanB
         bot.contagious = True
     bots.append(bot)
 
-comp = False 
+comp = False
+
+
+
+
 while True:
     mouseX, mouseY = pygame.mouse.get_pos()
         
@@ -559,14 +567,14 @@ while True:
             i.x = random.randint(1, 1300)
             i.y = random.randint(1, 800)
 
-    spawnNum = 200
+    spawnNum = 220
   
         
     if keys[pygame.K_r]:
         bots = []
         for i in tiles:
             i.particles = []
-        Grav =  random.uniform(.50, .1)
+        Grav =  random.uniform(.50, 1.2)
 
         cBots = random.randint(1, 5) 
 
@@ -721,8 +729,6 @@ while True:
             bots.append(bot)
             
             
-
-            
         
     for i in tiles:
         #i.show(display)
@@ -734,4 +740,3 @@ while True:
     clock.tick(160)
 
     pygame.display.update()
-   

@@ -304,7 +304,7 @@ class Bot:
                 if sChance == 1:
                     i.color = self.conColor
                     i.contagious = False
-                    i.conColor = self.conColor
+                    i.conColor = self.color
                     if i.color == (255,0,0):
                         i.conColor = c11
                         i.conDist = d1
@@ -592,7 +592,7 @@ while True:
             i.x = random.randint(1, 1300)
             i.y = random.randint(1, 800)
 
-    spawnNum = 270
+    spawnNum = 240
   
         
     if keys[pygame.K_r]:
@@ -603,7 +603,7 @@ while True:
 
         cBots = random.randint(1, 5) 
 
-        gDist = random.randint(50,300)
+        gDist = random.randint(100,400)
         g1 = random_number = random.uniform(-1, 1)
         g2 = random_number = random.uniform(-1, 1)
         g3 = random_number = random.uniform(-1, 1)
@@ -652,24 +652,24 @@ while True:
         g36 = random_number = random.uniform(-1, 1)
     
 
-        c1 =random.randint(0,2)
-        c2 =random.randint(0,2)
-        c3 =random.randint(0,2)
-        c4 =random.randint(0,2)
-        c5 =random.randint(0,2)
-        c6 =random.randint(0,2)
-        c7 =random.randint(0,2)
+        c1 =random.randint(0,1)
+        c2 =random.randint(0,1)
+        c3 =random.randint(0,1)
+        c4 =random.randint(0,1)
+        c5 =random.randint(0,1)
+        c6 =random.randint(0,1)
+        c7 =random.randint(0,1)
 
         
 
         #how contagious? 
-        cc1 =random.randint(0,10)
-        cc2 =random.randint(0,10)
-        cc3 =random.randint(0,10)
-        cc4 =random.randint(0,10)
-        cc5 =random.randint(0,10)
-        cc6 =random.randint(0,10)
-        cc7 =random.randint(0,10)
+        cc1 =random.randint(0,300)
+        cc2 =random.randint(0,300)
+        cc3 =random.randint(0,300)
+        cc4 =random.randint(0,300)
+        cc5 =random.randint(0,300)
+        cc6 =random.randint(0,300)
+        cc7 =random.randint(0,300)
 
 
         #how far from is it contagious?

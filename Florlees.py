@@ -124,6 +124,7 @@ c17 = (255,0,0)
 bots = []
 tiles = []
 
+gDist = random.randint(100,400)
 #color of particles user can place
 placeColor = (255,0,0)
 
@@ -225,19 +226,20 @@ class Bot:
         global g42
         global grav
         global downOn
+        global gDist
         ##SET BOUNDS##
 
-        if self.x < 16:
-            self.x = self.x + 20
+        #if self.x < 16:
+            #self.x = self.x + 20
 
-        if self.x > 1294:
-            self.x = self.x - 20
+        #if self.x > 1294:
+            #self.x = self.x - 20
 
-        if self.y >794:
-            self.y = self.y - 20
+        #if self.y >794:
+            #self.y = self.y - 20
 
-        if self.y < 6:
-            self.y = self.y + 20
+        #if self.y < 6:
+            #self.y = self.y + 20
 
         #Will be used to move bot after gravity effects are calculated
         mX = 0
@@ -417,7 +419,7 @@ class Bot:
                 else:
                     g = g42
                 
-            if dist > 0 and self.tile == i.tile or dist > 0 and dist <= random.randint(100,400):
+            if dist > 0 and self.tile == i.tile or dist > 0 and dist <= gDist:
                 F = g/(dist*Grav)
                 mX += (F*dX)
                 mY += (F*dY)
@@ -578,6 +580,7 @@ while True:
 
         cBots = random.randint(1, 5) 
 
+        gDist = random.randint(100,400)
         g1 = random_number = random.uniform(-1, 1)
         g2 = random_number = random.uniform(-1, 1)
         g3 = random_number = random.uniform(-1, 1)
@@ -624,7 +627,7 @@ while True:
         g34 = random_number = random.uniform(-1, 1)
         g35 = random_number = random.uniform(-1, 1)
         g36 = random_number = random.uniform(-1, 1)
-
+    
 
         c1 =random.randint(0,1)
         c2 =random.randint(0,1)

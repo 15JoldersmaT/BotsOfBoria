@@ -2,9 +2,6 @@ import pygame
 import sys
 import random
 import math
-import cProfile
-import pstats
-import multiprocessing
 
 
 display = pygame.display.set_mode((1300,800) ,flags=pygame.SCALED, vsync=0)
@@ -224,9 +221,35 @@ class Bot:
         global g39
         global g41
         global g42
+        global c1
+        global c2
+        global c3
+        global c4
+        global c5
+        global c6
+
         global grav
         global downOn
         global gDist
+        
+
+        if self.color == (255, 0, 0) and c1 == True:
+            self.contagious = True
+
+        if self.color == (215, 215, 18) and c2 == True:
+            self.contagious = True
+
+        if self.color == (0, 255, 0) and c3 == True:
+            self.contagious = True
+
+        if self.color == (0, 0, 255) and c4 == True:
+            self.contagious = True
+
+        if self.color == (200, 55, 187) and c5 == True:
+            self.contagious = True
+
+        if self.color == (0, 255, 255) and c6 == True:
+            self.contagious = True
         ##SET BOUNDS##
 
         #if self.x < 16:
@@ -259,7 +282,7 @@ class Bot:
             dist = math.sqrt(dist)
             
             g = i.g
-            if dist > 0 and i != self.tile:
+            if dist > 0 and i != self.tile  :
                 F = g/(dist*Grav)
                 mX += (F*dX)
                 mY += (F*dY)
@@ -569,18 +592,18 @@ while True:
             i.x = random.randint(1, 1300)
             i.y = random.randint(1, 800)
 
-    spawnNum = 200
+    spawnNum = 270
   
         
     if keys[pygame.K_r]:
         bots = []
         for i in tiles:
             i.particles = []
-        Grav =  random.uniform(.50, 1.2)
+        Grav =  random.uniform(.50, .8)
 
         cBots = random.randint(1, 5) 
 
-        gDist = random.randint(100,400)
+        gDist = random.randint(50,300)
         g1 = random_number = random.uniform(-1, 1)
         g2 = random_number = random.uniform(-1, 1)
         g3 = random_number = random.uniform(-1, 1)
@@ -629,13 +652,13 @@ while True:
         g36 = random_number = random.uniform(-1, 1)
     
 
-        c1 =random.randint(0,1)
-        c2 =random.randint(0,1)
-        c3 =random.randint(0,1)
-        c4 =random.randint(0,1)
-        c5 =random.randint(0,1)
-        c6 =random.randint(0,1)
-        c7 =random.randint(0,1)
+        c1 =random.randint(0,2)
+        c2 =random.randint(0,2)
+        c3 =random.randint(0,2)
+        c4 =random.randint(0,2)
+        c5 =random.randint(0,2)
+        c6 =random.randint(0,2)
+        c7 =random.randint(0,2)
 
         
 
@@ -650,15 +673,21 @@ while True:
 
 
         #how far from is it contagious?
-        d1 =random.uniform(0, 12)
-        d2 =random.uniform(0, 12)
-        d3 =random.uniform(0, 12)
-        d4 =random.uniform(0, 12)
-        d5 =random.uniform(0, 12)
-        d6 =random.uniform(0, 12)
-        d7 =random.uniform(0, 12)
+        d1 =random.uniform(0, 3)
+        d2 =random.uniform(0, 3)
+        d3 =random.uniform(0, 3)
+        d4 =random.uniform(0, 3)
+        d5 =random.uniform(0, 3)
+        d6 =random.uniform(0, 3)
+        d7 =random.uniform(0, 3)
 
-     
+        c11 = random.choice([(215, 134, 18),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)])
+        c12 = random.choice([(215, 134, 18),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)])
+        c13 = random.choice([(215, 134, 18),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)])
+        c14 = random.choice([(215, 134, 18),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)])
+        c15 = random.choice([(215, 134, 18),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)])
+        c16 = random.choice([(215, 134, 18),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)])
+        c17 = random.choice([(215, 134, 18),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)])
         if c1 == 1:
             c11 = random.choice([(215, 134, 18),(255, 0, 0), (215, 215, 18), (0, 255, 0), (0, 0, 255), (200, 55, 187), (0, 255, 255)])
             
@@ -677,7 +706,7 @@ while True:
                                  
 
         if lowMode == True:
-            spawnNum = 180
+            spawnNum = 150
 
         if emptyMode == True:
             spawnNum = 0

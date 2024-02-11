@@ -567,7 +567,7 @@ while True:
             i.x = random.randint(1, 1300)
             i.y = random.randint(1, 800)
 
-    spawnNum = 220
+    spawnNum = 200
   
         
     if keys[pygame.K_r]:
@@ -736,6 +736,8 @@ while True:
     for i in bots:
         i.show(display)
         i.move()
+
+    pygame.display.flip()
         
     clock.tick(160)
 

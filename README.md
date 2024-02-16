@@ -5,5 +5,7 @@ Press r to update environment.
 
 Including both python and java versions. 
 
+![](demo.gif)
+
 
 

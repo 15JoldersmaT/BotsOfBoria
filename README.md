@@ -3,7 +3,7 @@ Particle simulation (n-body simulation), all 'bots' or particles follow specific
 
 Press r to update environment.
 
-
+Including both python and java versions. 
 
 
 
